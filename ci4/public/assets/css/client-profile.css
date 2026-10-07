@@ -1,0 +1,100 @@
+.pf-page {
+    --pf-bg: #f3f4f8;
+    --pf-ink: #1b1d2e;
+    --pf-muted: #5b6075;
+    --pf-line: #e3e5ee;
+    --pf-row-line: #eceef4;
+    --pf-input-line: #b9bdd3;
+    --pf-navy: #23297a;
+    --pf-navy-tint: #eef0fb;
+    --pf-green: #17643c;
+    --pf-green-bg: #e3f3ea;
+    --pf-red: #a3341f;
+    --pf-amber: #8a4b00;
+    --pf-amber-bg: #fff6e8;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 24px 16px 56px;
+    background: var(--pf-bg);
+    color: var(--pf-ink);
+    font-family: var(--cs-sans, "Source Sans 3", system-ui, sans-serif);
+    font-size: 16px;
+    line-height: 1.45;
+}
+.pf-page *, .pf-page *::before, .pf-page *::after { box-sizing: border-box; }
+.pf-page h1, .pf-page h2, .pf-page p, .pf-page dl, .pf-page dd, .pf-page dt { margin: 0; }
+.pf-page button, .pf-page input, .pf-page a { font: inherit; color: inherit; }
+.pf-page :focus-visible { outline: 3px solid #9aa3e0; outline-offset: 2px; }
+.pf-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.pf-muted { color: var(--pf-muted); font-size: 15px; }
+.pf-empty { color: var(--pf-muted); font-style: italic; }
+.pf-title { font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+.pf-card { background: #fff; border: 1px solid var(--pf-line); border-radius: 16px; padding: 20px; margin-bottom: 16px; }
+.pf-card__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+.pf-card__title { font-size: 18px; font-weight: 700; }
+.pf-success { margin-bottom: 12px; padding: 10px 14px; border-radius: 10px; background: var(--pf-green-bg); color: var(--pf-green); font-weight: 600; }
+.pf-error { margin-top: 6px; font-size: 14px; color: var(--pf-red); font-weight: 600; }
+.pf-error[hidden] { display: none; }
+.pf-hint { margin-top: 6px; font-size: 14px; color: var(--pf-muted); }
+.pf-req { margin-left: 6px; font-size: 12px; font-weight: 700; color: var(--pf-red); }
+
+/* Buttons and links */
+.pf-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid var(--pf-navy); background: var(--pf-navy); color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; white-space: nowrap; }
+.pf-btn:hover { filter: brightness(1.06); }
+.pf-btn--ghost { background: #fff; color: var(--pf-navy); }
+.pf-btn--text { background: transparent; border-color: transparent; color: var(--pf-navy); }
+.pf-btn--danger { background: #fff; color: var(--pf-red); border-color: var(--pf-red); }
+.pf-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--pf-navy); font-weight: 600; text-decoration: none; }
+.pf-link:hover { text-decoration: underline; }
+.pf-actions { display: flex; justify-content: flex-end; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+
+/* Identity banner */
+.pf-banner { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.pf-avatar-wrap { position: relative; flex: 0 0 76px; width: 76px; height: 76px; }
+.pf-avatar { display: block; width: 76px; height: 76px; border-radius: 50%; object-fit: cover; }
+.pf-avatar--initials { display: grid; place-items: center; background: var(--pf-navy); color: #fff; font-size: 26px; font-weight: 700; }
+.pf-camera { position: absolute; right: -4px; bottom: -4px; width: 44px; height: 44px; border-radius: 50%; border: 2px solid #fff; background: var(--pf-navy); color: #fff; display: grid; place-items: center; cursor: pointer; padding: 0; }
+.pf-identity { flex: 1 1 260px; min-width: 0; }
+.pf-name { font-size: 22px; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; }
+.pf-identity .pf-muted { margin-top: 2px; }
+.pf-status { display: inline-flex; align-items: center; min-height: 28px; margin-top: 8px; padding: 2px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+.pf-status--ok { background: var(--pf-green-bg); color: var(--pf-green); }
+.pf-status--warn { background: var(--pf-amber-bg); color: var(--pf-amber); }
+.pf-status--bad { background: #f8e7e3; color: var(--pf-red); }
+.pf-banner .pf-error { margin-top: 8px; }
+
+/* Label/value rows */
+.pf-rows { display: grid; }
+.pf-row { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 12px; align-items: center; padding: 14px 0; border-top: 1px solid var(--pf-row-line); }
+.pf-row:first-child { border-top: 0; padding-top: 0; }
+.pf-row dt { color: var(--pf-muted); font-size: 15px; }
+.pf-row dd { font-size: 16px; font-weight: 600; overflow-wrap: anywhere; }
+.pf-row--action { grid-template-columns: 180px minmax(0, 1fr); }
+.pf-row__value { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-weight: 400; }
+.pf-row__value .pf-muted { font-size: 15px; }
+.pf-row__value .pf-muted span { color: var(--pf-ink); font-weight: 600; }
+
+/* Forms */
+.pf-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; }
+.pf-field label { display: block; font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.pf-input { width: 100%; min-height: 46px; padding: 10px 14px; border: 1px solid var(--pf-input-line); border-radius: 10px; background: #fff; font-size: 16px; }
+.pf-input:focus { border-color: var(--pf-navy); outline: 3px solid #9aa3e0; outline-offset: 0; }
+.pf-input[aria-invalid="true"] { border-color: var(--pf-red); }
+.pf-pw { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--pf-row-line); display: grid; gap: 14px; }
+.pf-pw[hidden] { display: none; }
+
+/* Sign out */
+.pf-signout { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.pf-signout .pf-card__title { margin-bottom: 4px; }
+
+@media (max-width: 640px) {
+    .pf-page { padding: 16px 12px 40px; }
+    .pf-title { font-size: 24px; }
+    .pf-card { padding: 16px; }
+    .pf-row, .pf-row--action { grid-template-columns: 1fr; gap: 4px; }
+    .pf-row dd { font-size: 16px; }
+    .pf-row__value { justify-content: flex-start; }
+    .pf-grid { grid-template-columns: 1fr; }
+    .pf-banner { gap: 16px; }
+    .pf-signout .pf-btn { width: 100%; }
+}

@@ -1,0 +1,46 @@
+/*
+ * Shared stylesheet for every report PDF (Remittance, Overdue, Commission).
+ * Rendered by Dompdf, so: no flexbox/grid, no CSS variables, DejaVu Sans
+ * (ships with Dompdf and has the peso sign, unlike the built-in Helvetica).
+ * Page numbers ("Page X of Y") are stamped by ReportPdfService, not CSS.
+ */
+@page { margin: 14mm 12mm 16mm 12mm; }
+
+body.rpt { font-family: 'DejaVu Sans', sans-serif; font-size: 9px; color: #111; margin: 0; }
+
+/* Header */
+.rpt-head { width: 100%; border-collapse: collapse; border-bottom: 2px solid #1b2473; margin-bottom: 6px; }
+.rpt-head td { vertical-align: top; padding: 0 0 6px; }
+.rpt-head__logo { width: 85px; }
+.rpt-logo { width: 78px; height: 78px; }
+.rpt-logo--placeholder { border: 1px solid #999; color: #777; text-align: center; font-size: 9px; line-height: 78px; }
+.rpt-head__company { padding-left: 8px; }
+.rpt-company { font-size: 13px; font-weight: bold; }
+.rpt-program { font-size: 11px; font-weight: bold; margin-bottom: 2px; }
+.rpt-address { font-size: 7px; color: #333; }
+.rpt-head__reg { width: 150px; text-align: right; font-size: 7px; color: #333; }
+
+.rpt-title { text-align: center; font-size: 12px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; background: #e5e7eb; border: 1px solid #111; padding: 3px 0; margin-bottom: 5px; }
+
+.rpt-meta { width: 100%; border-collapse: collapse; margin-bottom: 8px; font-size: 8px; }
+.rpt-meta td { padding: 1px 0; }
+.rpt-meta__label { font-weight: bold; text-transform: uppercase; color: #444; }
+.rpt-meta__gen { color: #666; font-style: italic; }
+
+/* Data tables */
+table.rpt-table { width: 100%; border-collapse: collapse; }
+.rpt-table th, .rpt-table td { border: 1px solid #888; padding: 4px 5px; text-align: left; vertical-align: top; }
+.rpt-table thead th { background: #f0f0f0; font-size: 8px; text-transform: uppercase; }
+.rpt-table thead { display: table-header-group; }
+.rpt-table tr { page-break-inside: avoid; }
+.rpt-table .num { text-align: right; white-space: nowrap; }
+.rpt-table .center { text-align: center; }
+.rpt-table td.rpt-empty { text-align: center; padding: 18px 6px; color: #555; font-style: italic; }
+
+/* Totals */
+.rpt-table tfoot td { background: #f7f7f7; font-weight: bold; border-top: 2px solid #111; }
+.rpt-table tr.rpt-total td { background: #e5e7eb; font-size: 10px; }
+.rpt-summary { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.rpt-summary td { padding: 2px 0; font-size: 9px; }
+.rpt-summary td.num { text-align: right; font-weight: bold; }
+.rpt-note { margin-top: 8px; font-size: 7px; color: #666; font-style: italic; }

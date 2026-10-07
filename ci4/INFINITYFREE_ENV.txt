@@ -1,0 +1,36 @@
+This is NOT a live config file - CodeIgniter only reads ".env", and this
+file is deliberately named something else so your local site keeps
+working off the real .env (localhost/XAMPP settings).
+
+When you're ready to upload to InfinityFree:
+1. Copy everything below the line into your LOCAL .env file temporarily,
+   OR directly create/edit .env inside the files you upload to the host
+   (do not overwrite your local working .env with this - keep this
+   content only in the copy that goes to InfinityFree).
+2. Upload that .env (it's a hidden dotfile - enable "show hidden files"
+   in your FTP client, e.g. FileZilla: Server menu > Force showing
+   hidden files).
+3. Restore your local .env back to development/localhost settings
+   afterward if you edited it in place instead of making a separate copy.
+
+------------------------------------------------------------------------
+CI_ENVIRONMENT = production
+
+app.baseURL = 'https://kaagapaycaresync.infinityfreeapp.com/'
+
+database.default.hostname = sql104.infinityfree.com
+database.default.database = if0_42629049_caresync
+database.default.username = if0_42629049
+database.default.password = caresync1234
+database.default.DBDriver = MySQLi
+database.default.port = 3306
+------------------------------------------------------------------------
+
+Every other line in .env (email, SMS, ID verification, etc.) stays the
+same in both versions - only the lines above differ between local and
+production.
+
+Note: app/Config/App.php and app/Config/Database.php already have these
+same InfinityFree values baked in as fallbacks, so even if the host
+somehow doesn't read .env, the live site will still connect to the right
+database and generate the right URLs. Nothing further needed there.

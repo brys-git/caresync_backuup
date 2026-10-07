@@ -1,0 +1,29 @@
+# Dependencies
+ci4/vendor/
+ci4/composer.phar
+inapp-1.0.0/node_modules/
+
+# CodeIgniter writable/build artifacts
+ci4/writable/cache/*
+!ci4/writable/cache/index.html
+ci4/writable/logs/*
+!ci4/writable/logs/index.html
+ci4/writable/session/*
+!ci4/writable/session/index.html
+ci4/writable/debugbar/*
+!ci4/writable/debugbar/index.html
+ci4/writable/uploads/*
+!ci4/writable/uploads/index.html
+ci4/build/logs/*
+
+# Local build output
+inapp-1.0.0/dist/
+
+# Editor/OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Local DB dumps / scratch scripts (not part of the app)
+*.sql
